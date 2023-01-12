@@ -1,0 +1,60 @@
+// color variables
+$brand-color: #613DC1;
+$background: #292929;
+$brand-text: $brand-color;
+$back-text: $background;
+// font
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// tailwind directives
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// general
+body {
+  background-color: $background;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+// utils
+.btn {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+// btn1
+.brand {
+  background-color: $brand-color;
+  color: white;
+  transition: all .3s;
+  &:hover{
+    background-color: white;
+    color: $brand-color;
+  }
+}
+
+// btn2
+.dark {
+  background-color: #292929;
+  color: $brand-color;
+}
+
+// btn3
+.light {
+  background-color: white;
+  color: #292929;
+}
+.brand-text{
+  color: $brand-color;
+}

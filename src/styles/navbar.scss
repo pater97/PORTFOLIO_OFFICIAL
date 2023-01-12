@@ -1,0 +1,43 @@
+@import  '../index.scss';
+
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    height: 10vh;
+    div{
+        width: calc(100%/3);
+    }
+    .navigation{
+        display: flex;
+        h3{
+            font-size: 16px;
+            font-weight: 500;
+            margin-right: 30px;
+            cursor: pointer;
+            transition: all .2s;
+            &:hover{
+                color: $brand-color;
+            }
+        }
+        .active{
+            color: $brand-color;
+            font-weight: bold;
+        }
+    }
+    .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        img{
+            width: auto;
+            height: 100%;
+        }
+    }
+    .contact{
+        display: flex;
+        justify-content: flex-end;
+    }
+}
