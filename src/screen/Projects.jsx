@@ -1,8 +1,11 @@
 import React from 'react'
+import '../styles/projects.scss'
 
 function Projects() {
   return (
-    <div>Projects</div>
+    <main id='projects'>
+
+    </main>
   )
 }
 

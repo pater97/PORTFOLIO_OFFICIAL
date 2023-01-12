@@ -2,9 +2,9 @@
 @import  '../index.scss';
 
 #home {
-    padding: 0 20px;
-
+    
     .heroSection {
+        padding: 0 20px;
         height: 90vh;
         display: flex;
 
@@ -66,6 +66,36 @@
             }
             .subtext{
                 font-size: 30px;
+            }
+        }
+    }
+    .aboutSection{
+        height: 100vh;
+        background-image: url('../assets/wave2.png');
+        background-position: bottom;
+        background-repeat: no-repeat;
+        // align-items: flex-start;
+        .padding-container{
+            padding: 0 20px;
+            display: flex;
+            .aboutText,.aboutImage{
+                width: 50%;
+            }
+            .aboutText{
+                .aboutTitle{
+                    font-size: 40px;
+                    margin: 30px 0 20px 0;
+                }
+                .aboutParag{
+                    font-size: 20px;
+                    line-height: 30px;
+                    width: 80%;
+                }
+            }
+            .aboutImage{
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
     }
