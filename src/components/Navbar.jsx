@@ -25,7 +25,7 @@ function Navbar() {
   };
 
   return (
-    <navbar id="navbar">
+    <navbar id="navbar" className="mx-auto container">
       <div className="navigation">
         <h3
           onClick={goTo(1)}

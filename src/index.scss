@@ -4,11 +4,8 @@ $background: #292929;
 $brand-text: $brand-color;
 $back-text: $background;
 // font
+@import  "~bootstrap/scss/bootstrap" ;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-// tailwind directives
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 // reset
 * {
@@ -22,6 +19,17 @@ body {
   background-color: $background;
   font-family: 'Montserrat', sans-serif;
   color: white;
+  &::-webkit-scrollbar{
+    width: 5px;
+    background-color: $background;
+  }
+  &::-webkit-scrollbar-thumb{
+    background-color: $brand-color;
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-thumb:hover{
+    background-color: white;
+  }
 }
 
 // utils
@@ -46,14 +54,20 @@ body {
 
 // btn2
 .dark {
-  background-color: #292929;
-  color: $brand-color;
+  background-color: $background;
+  color: white;
+  transition: all .3s ease-in-out;
+  &:hover{
+    background-color: white;
+    color: $brand-color;
+  }
 }
 
 // btn3
 .light {
   background-color: white;
   color: #292929;
+
 }
 .brand-text{
   color: $brand-color;
