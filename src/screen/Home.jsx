@@ -6,14 +6,15 @@ import { FaGithubAlt } from "react-icons/fa";
 import React from "react";
 // components
 import Button from "../components/ui/Button";
-// import Carousel from "../components/carousel/Carousel";
+import Carousel from "../components/carousel/Carousel";
 // hook
 import { useNavigate } from "react-router-dom";
 // scss
 import "../styles/home.scss";
 // assets
-const HEROIMG = require("../assets/hero-image.png");
+const HEROIMG = require("../assets/heroimage.png");
 const ABOUTIMAGE = require("../assets/3dperson.png");
+const MEHOODY = require('../assets/me_hoody.png')
 const CIRCLEICONS = require("../assets/circle_icons.png");
 const CV = require("../assets/CV-GiuseppePaternostro-2023.pdf");
 
@@ -22,6 +23,9 @@ function Home() {
 
   function goToAbout() {
     navigate("/about");
+  }
+  function goToProject() {
+    navigate("/project");
   }
   return (
     <main id="home">
@@ -133,13 +137,42 @@ function Home() {
           </div>
           <div className="aboutImage col-lg-6 col-sm-12">
             <img className="aboutImg" src={ABOUTIMAGE} alt="person in 3d" />
+            {/* da capire se inserire il testone o lasciare l'omino 3d */}
+            {/* <img className="aboutImg" src={MEHOODY} alt="person in 3d" /> */}
           </div>
         </div>
       </section>
       {/* sezione  progetti*/}
       <section className="projectSection">
         <div className="personal-section container">
-          {/* <Carousel/> */}
+          <h2>
+            PROGETTI
+          </h2>
+          <p>
+            Durante il corso del mio apprendimento, nel tempo libero e in alcune esperienze lavorative ho svolto diversi progetti. <br />
+            I progetti svariano da siti web vetrina, gestionali e applicazioni mobile passando da puro front end fino al back end con anche l'integrazione di database creati da me.
+          </p>
+          <div className="carouselBox">
+            <Carousel/>
+          </div>
+          <div className="buttonBox">
+            <Button
+            buttonColor={'brand'}
+            clickButton={goToProject}
+            label={'GUARDA ALTRI PROGETTI'}
+            />
+          </div>
+        </div>
+      </section>
+      {/* sezione tecnologie utilizzate */}
+      <section className="techSection">
+        <div className="personal-section container row mx-auto">
+          <div className="circleTech col-lg-6 col-sm-12">
+            <img src={CIRCLEICONS} alt="circleicons" />
+          </div>
+          <div className="textTech col-sm-12 col-lg-6">
+
+          </div>
         </div>
       </section>
     </main>

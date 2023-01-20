@@ -94,6 +94,7 @@
                 .aboutTitle {
                     font-size: 40px;
                     margin: 30px 0 20px 0;
+                    font-weight: bold;
                 }
 
                 .aboutParag {
@@ -135,8 +136,42 @@
         }
     }
     .projectSection{
-        height: 50vh;
         background-image: linear-gradient(180deg, $brand-color, transparent);
+        h2{
+            color: $background;
+            font-size: 60px;
+            font-weight: bolder;
+            text-shadow: -1px 1px 11px #29292954;
+            text-align: center;
+            letter-spacing: 110px;
+        }
+        p{
+            text-align: center;
+            font-weight: 700;
+            margin: 40px 0;
+            font-size: 18px;
+        }
+        .buttonBox{
+            display: flex;
+            justify-content: center;
+            .btn{
+                font-size: 20px;
+                padding: 5px 25px;
+            }
+        }
+    }
+    .techSection{
+        height: 100vh;
+        .circleTech{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 100%;
+                filter: drop-shadow(0px 0px 30px #00000082);
+                animation: rotatecircle infinite 80s linear ;
+            }
+        }
     }
 }
 
@@ -147,6 +182,23 @@
     animation-iteration-count: infinite;
 }
 
+@keyframes rotatecircle {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 @keyframes pathAnim-0 {
     0% {
         d: path("M 0,400 C 0,400 0,100 0,100 C 43.46750838133161,94.97646509274006 86.93501676266322,89.9529301854801 122,86 C 157.06498323733678,82.0470698145199 183.72744133067872,79.16474435081965 214,75 C 244.27255866932128,70.83525564918035 278.15521791462197,65.38809241124127 314,69 C 349.84478208537803,72.61190758875873 387.6516870108335,85.28288600421521 426,89 C 464.3483129891665,92.71711399578479 503.238034042044,87.48036357189783 546,96 C 588.761965957956,104.51963642810217 635.3961768209901,126.79565970819354 677,125 C 718.6038231790099,123.20434029180646 755.1772586739952,97.33699759532807 783,96 C 810.8227413260048,94.66300240467193 829.8947884830291,117.85634991049422 871,111 C 912.1052115169709,104.14365008950578 975.2435873938887,67.2376027626951 1014,69 C 1052.7564126061113,70.7623972373049 1067.1308619414167,111.19323903872535 1099,124 C 1130.8691380585833,136.80676096127465 1180.2329648404452,121.98944108240353 1219,124 C 1257.7670351595548,126.01055891759647 1285.937278696803,144.8489966316606 1323,135 C 1360.062721303197,125.1510033683394 1406.0179203723421,86.61457239095412 1427,76 C 1447.9820796276579,65.38542760904588 1443.991039813829,82.69271380452294 1440,100 C 1440,100 1440,400 1440,400 Z");

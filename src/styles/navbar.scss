@@ -11,19 +11,38 @@
     }
     .navigation{
         display: flex;
-        h3{
-            font-size: 16px;
-            font-weight: 500;
+        .choicheBox{
+            width: fit-content;
             margin-right: 30px;
-            cursor: pointer;
-            transition: all .2s;
-            &:hover{
+            h3{
+                margin-bottom: 0;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all .2s;
+            }
+            .linehover{
+                height: 2px;
+                width: 0px;
+                transition: all .3s ease-in-out;
+            }
+            .active{
+                color: $brand-color;
+                font-weight: bold;
+            }
+            .activeLineHover{
+                width: 100%;
+                height: 2px;
+                background-color: $brand-color;
+            }
+            &:hover h3{
                 color: $brand-color;
             }
-        }
-        .active{
-            color: $brand-color;
-            font-weight: bold;
+            &:hover .linehover{
+                width: 100%;
+                height: 2px;
+                background-color: $brand-color;
+            }
         }
     }
     .logo{

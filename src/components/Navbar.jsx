@@ -27,24 +27,33 @@ function Navbar() {
   return (
     <navbar id="navbar" className="mx-auto container">
       <div className="navigation">
-        <h3
-          onClick={goTo(1)}
-          className={`${ACTIVECLASS === 1 ? "active" : ""}`}
-        >
-          HOME
-        </h3>
-        <h3
-          onClick={goTo(2)}
-          className={`${ACTIVECLASS === 2 ? "active" : ""}`}
-        >
-          ABOUT
-        </h3>
-        <h3
-          onClick={goTo(3)}
-          className={`${ACTIVECLASS === 3 ? "active" : ""}`}
-        >
-          PROJECTS
-        </h3>
+        <div className="choicheBox">
+          <h3
+            onClick={goTo(1)}
+            className={`${ACTIVECLASS === 1 ? "active" : ""}`}
+          >
+            HOME
+          </h3>
+          <div className={`linehover ${ACTIVECLASS === 1 ? "activeLineHover" : ""}`}></div>
+        </div>
+        <div className="choicheBox">
+          <h3
+            onClick={goTo(2)}
+            className={`${ACTIVECLASS === 2 ? "active" : ""}`}
+          >
+            ABOUT
+          </h3>
+          <div className={`linehover ${ACTIVECLASS === 2 ? "activeLineHover" : ""}`}></div>
+        </div>
+        <div className="choicheBox">
+          <h3
+            onClick={goTo(3)}
+            className={`${ACTIVECLASS === 3 ? "active" : ""}`}
+          >
+            PROJECTS
+          </h3>
+          <div className={`linehover ${ACTIVECLASS === 3 ? "activeLineHover" : ""}`}></div>
+        </div>
       </div>
       <div className="logo">
         <img src={LOGO} alt="" />
