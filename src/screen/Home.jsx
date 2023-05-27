@@ -1,3 +1,5 @@
+// library
+import { motion } from "framer-motion";
 // icons
 import { HiMail, HiDocumentDownload } from "react-icons/hi";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -7,6 +9,7 @@ import React from "react";
 // components
 import Button from "../components/ui/Button";
 import Carousel from "../components/carousel/Carousel";
+import AnimatedButton from "../components/ui/animatedButton/AnimatedButton";
 // hook
 import { useNavigate } from "react-router-dom";
 // scss
@@ -14,7 +17,7 @@ import "../styles/home.scss";
 // assets
 const HEROIMG = require("../assets/heroimage.png");
 const ABOUTIMAGE = require("../assets/3dperson.png");
-const MEHOODY = require('../assets/me_hoody.png')
+const MEHOODY = require("../assets/me_hoody.png");
 const CIRCLEICONS = require("../assets/circle_icons.png");
 const CV = require("../assets/CV-GiuseppePaternostro-2023.pdf");
 
@@ -31,8 +34,13 @@ function Home() {
     <main id="home">
       {/* herosection */}
       <section className="heroSection mx-auto container row personal-section">
-        <div className="hsl col-lg-6 col-sm-12">
-          <div className="callToAction">
+        <motion.div
+          animate={{ x: 0 }}
+          initial={{ x: -300 }}
+          transition={{ duration: 1.3, ease: "easeInOut" }}
+          className="hsl col-lg-6 col-sm-12"
+        >
+          <div div className="callToAction">
             <a className="actionButton">
               <HiMail />
             </a>
@@ -57,8 +65,13 @@ function Home() {
           <div className="heroImage">
             <img className="heroimg" src={HEROIMG} alt="heroimg" />
           </div>
-        </div>
-        <div className="hsr col-lg-6 col-sm-12">
+        </motion.div>
+        <motion.div
+          animate={{ x: 0 }}
+          initial={{ x: 300 }}
+          transition={{ duration: 1.3, ease: "easeInOut" }}
+          className="hsr col-lg-6 col-sm-12"
+        >
           <h2 className="herotext">
             <span className="brand-text">HELLO</span> WORLD!
             <br />
@@ -69,7 +82,7 @@ function Home() {
           <h4 className="subtext">
             <span className="brand-text">FRONT END</span> DEVELOPER
           </h4>
-        </div>
+        </motion.div>
       </section>
       {/* aboutsection */}
       <section className="aboutSection personal-section">
@@ -112,28 +125,27 @@ function Home() {
         </svg>
         {/* container principale about */}
         <div className="main-container row mx-auto container">
-          <div className="aboutText col-lg-6 col-sm-12">
-            <h2 className="brand-text aboutTitle">SU DI ME</h2>
-            <p className="aboutParag">
-              Ciao! sono Giuseppe Paternostro, ho 25 anni e abito in brianza.{" "}
-              <br />
-              La mia passione per la tecnologia e la grafica mi hanno portato
-              fin qui a diventare un frontEnd developer. <br /> Sono solo
-              all'inizio del mio percorso, ma noto già benefici sia dal lato
-              professionale che personale. <br /> Ho voglia di imparare sempre
-              di più e confrontarmi con le tecnologie più innovative per
-              migliorarmi giorno dopo giorno.
-            </p>
-            <div className="buttonAboutContainer">
-              <Button
-                buttonColor={"dark"}
+          <div  className="aboutText col-lg-6 col-sm-12">
+            <motion.div initial={{x:-300}} whileInView={{x:0}} viewport={{once:true}} transition={{duration:1}}>
+              <h2 className="brand-text aboutTitle">SU DI ME</h2>
+              <p className="aboutParag">
+                Ciao! sono Giuseppe Paternostro, ho 25 anni e abito in brianza.{" "}
+                <br />
+                La mia passione per la tecnologia e la grafica mi hanno portato
+                fin qui a diventare un frontEnd developer. <br /> Sono solo
+                all'inizio del mio percorso, ma noto già benefici sia dal lato
+                professionale che personale. <br /> Ho voglia di imparare sempre
+                di più e confrontarmi con le tecnologie più innovative per
+                migliorarmi giorno dopo giorno.
+              </p>
+            </motion.div>
+            <motion.div initial={{x:-500}} whileInView={{x:0}} viewport={{once:true}} transition={{duration:1,delay:.4}} className="buttonAboutContainer">
+              <AnimatedButton
+
                 label={"SCOPRI DI PIÙ"}
                 clickButton={goToAbout}
               />
-              <a href={CV} download className="btn downloadButton" type="file">
-                SCARICA CURRICULUM
-              </a>
-            </div>
+            </motion.div>
           </div>
           <div className="aboutImage col-lg-6 col-sm-12">
             <img className="aboutImg" src={ABOUTIMAGE} alt="person in 3d" />
@@ -145,21 +157,22 @@ function Home() {
       {/* sezione  progetti*/}
       <section className="projectSection">
         <div className="personal-section container">
-          <h2>
-            PROGETTI
-          </h2>
+          <h2>PROGETTI</h2>
           <p>
-            Durante il corso del mio apprendimento, nel tempo libero e in alcune esperienze lavorative ho svolto diversi progetti. <br />
-            I progetti svariano da siti web vetrina, gestionali e applicazioni mobile passando da puro front end fino al back end con anche l'integrazione di database creati da me.
+            Durante il corso del mio apprendimento, nel tempo libero e in alcune
+            esperienze lavorative ho svolto diversi progetti. <br />I progetti
+            svariano da siti web vetrina, gestionali e applicazioni mobile
+            passando da puro front end fino al back end con anche l'integrazione
+            di database creati da me.
           </p>
           <div className="carouselBox">
-            <Carousel/>
+            <Carousel />
           </div>
           <div className="buttonBox">
             <Button
-            buttonColor={'brand'}
-            clickButton={goToProject}
-            label={'GUARDA ALTRI PROGETTI'}
+              buttonColor={"brand"}
+              clickButton={goToProject}
+              label={"GUARDA ALTRI PROGETTI"}
             />
           </div>
         </div>
@@ -170,9 +183,7 @@ function Home() {
           <div className="circleTech col-lg-6 col-sm-12">
             <img src={CIRCLEICONS} alt="circleicons" />
           </div>
-          <div className="textTech col-sm-12 col-lg-6">
-
-          </div>
+          <div className="textTech col-sm-12 col-lg-6"></div>
         </div>
       </section>
     </main>

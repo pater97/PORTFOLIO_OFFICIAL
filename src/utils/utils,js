@@ -1,0 +1,9 @@
+// nullSafe
+export const nullSafe = (func, fallbackValue) => {
+  try {
+    const value = func();
+    return value === null || value === undefined ? fallbackValue : value;
+  } catch (e) {
+    return fallbackValue;
+  }
+};
